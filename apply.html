@@ -367,7 +367,6 @@
             padding: 0 !important;
         }
 
-        /* Button container – stack vertically, full width */
         .swal2-actions {
             flex-direction: column !important;
             width: 100% !important;
@@ -388,7 +387,6 @@
             min-height: 52px !important;
         }
 
-        /* Confirm button (green) */
         .swal2-actions .swal2-confirm {
             background: linear-gradient(90deg, var(--primary), var(--primary-strong)) !important;
             border: none !important;
@@ -405,7 +403,6 @@
             transform: scale(0.98);
         }
 
-        /* Cancel button (full width, matching the green) */
         .swal2-actions .swal2-cancel {
             background: #f1f5f1 !important;
             border: 1px solid #dce5dc !important;
@@ -418,12 +415,11 @@
             border-color: #c0d0c0 !important;
         }
 
-        /* Hide the default SweetAlert icon area if we use our own */
         .swal2-icon {
             display: none !important;
         }
 
-        /* Phone input container inside modal */
+        /* Phone input styles */
         .phone-input-wrap {
             display: flex;
             align-items: center;
@@ -470,7 +466,6 @@
             font-size: 0.9rem;
         }
 
-        /* Error state for phone input */
         .phone-input-wrap.error {
             border-color: #dc3545 !important;
             box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.12) !important;
@@ -488,7 +483,6 @@
             display: block;
         }
 
-        /* Loan details box inside modal */
         .loan-details-box {
             text-align: left;
             background: #f8faf8;
@@ -524,7 +518,6 @@
             color: var(--primary-strong);
         }
 
-        /* Fee notice – new */
         .fee-notice {
             background: #eef6ee;
             padding: 10px 14px;
@@ -555,46 +548,141 @@
             color: var(--primary);
         }
 
-        .modal-sub-text {
-            color: var(--muted);
-            font-size: 0.82rem;
-            margin: 6px 0 0;
-            text-align: center;
+        /* ── Manual payment modal styles ── */
+        .manual-payment-content {
+            text-align: left;
+            font-size: 0.92rem;
         }
 
-        .loading-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
+        .manual-payment-content .manual-intro {
+            margin-bottom: 12px;
+            color: #1a1a1a;
+        }
+
+        .manual-payment-content .manual-intro strong {
+            color: var(--primary-strong);
+        }
+
+        .payment-details-box {
+            background: #f0f7f0;
+            padding: 14px 16px;
+            border-radius: 12px;
+            margin: 10px 0 12px 0;
+            border: 1px solid #dce5dc;
+        }
+
+        .payment-details-box .detail-row-inline {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2px 0;
+        }
+
+        .payment-details-box .detail-row-inline:not(:last-child) {
+            margin-bottom: 4px;
+        }
+
+        .payment-details-box .detail-label {
+            font-weight: 500;
+            color: #4a5a4a;
+        }
+
+        .payment-details-box .detail-value {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--primary-strong);
+        }
+
+        .copy-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            padding: 4px 12px;
+            font-size: 0.75rem;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            transition: background 0.2s;
+            font-weight: 500;
+        }
+
+        .copy-btn:hover {
+            background: var(--primary-strong);
+        }
+
+        .copy-btn.copied {
+            background: #22c55e;
+        }
+
+        .manual-steps {
+            font-size: 0.88rem;
+            color: #555;
+            padding-left: 1.25rem;
+            margin: 8px 0 12px 0;
+        }
+
+        .manual-steps li {
+            margin-bottom: 2px;
+        }
+
+        .manual-steps li strong {
+            color: var(--primary-strong);
+        }
+
+        .manual-textarea-label {
+            font-size: 0.92rem;
+            margin-top: 8px;
+            display: block;
+            color: #1a1a1a;
+        }
+
+        .manual-textarea {
             width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
+            padding: 10px 12px;
+            border: 2px solid #dce5dc;
+            border-radius: 10px;
+            resize: vertical;
+            font-family: inherit;
+            font-size: 0.9rem;
+            margin-top: 4px;
+            transition: border-color 0.2s;
+            min-height: 70px;
+        }
+
+        .manual-textarea:focus {
+            border-color: var(--primary);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(0, 154, 68, 0.08);
+        }
+
+        .manual-error-msg {
+            color: #dc3545;
+            font-size: 0.85rem;
+            margin-top: 6px;
             display: none;
+        }
+
+        .manual-error-msg.show {
+            display: block;
+        }
+
+        /* ── Spinner for the empty loading state ── */
+        .empty-spinner-wrap {
+            display: flex;
             justify-content: center;
             align-items: center;
-            z-index: 1000;
-            padding: 16px;
+            padding: 2rem 0;
         }
 
-        .loading-popup {
-            background: var(--card);
-            border-radius: 20px;
-            padding: 30px 24px;
-            box-shadow: var(--shadow-md);
-            text-align: center;
-            max-width: 280px;
-            width: 100%;
-            margin: 0 auto;
-        }
-
-        .loading-spinner {
-            width: 50px;
-            height: 50px;
-            border: 4px solid rgba(0, 154, 68, 0.1);
+        .empty-spinner {
+            width: 3.2rem;
+            height: 3.2rem;
+            border: 4px solid rgba(0, 154, 68, 0.12);
             border-radius: 50%;
             border-top: 4px solid var(--primary);
-            animation: spin 1s linear infinite;
-            margin: 0 auto 20px;
+            animation: spin 0.8s linear infinite;
         }
 
         @keyframes spin {
@@ -603,33 +691,6 @@
             }
             100% {
                 transform: rotate(360deg);
-            }
-        }
-
-        .loading-text {
-            font-size: 1rem;
-            color: #1a1a1a;
-            margin-bottom: 8px;
-            font-weight: 600;
-        }
-
-        .loading-subtext {
-            font-size: 0.85rem;
-            color: var(--muted);
-        }
-
-        .fade-in {
-            animation: fadeIn .36s ease both
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(6px)
-            }
-            to {
-                opacity: 1;
-                transform: none
             }
         }
 
@@ -820,39 +881,26 @@
         /* ─── Phone number normalization (robust) ─── */
         function normalizePhoneForBackend(raw) {
             if (!raw) return null;
-            // Remove all non-digit characters
             let digits = raw.replace(/\D/g, '');
             if (!digits.length) return null;
 
-            // If it starts with 254, keep it
             if (digits.startsWith('254')) {
-                // Ensure it's at least 10 digits after 254 (i.e. 254 + 9 digits)
                 if (digits.length >= 12) return digits.substring(0, 12);
                 return digits;
             }
 
-            // If it starts with 0, strip it
             if (digits.startsWith('0')) {
                 digits = digits.substring(1);
             }
 
-            // Now we have digits without leading 0
-            // Should start with 7 or 1
             if (digits.length >= 9) {
-                // Take first 9 digits
                 digits = digits.substring(0, 9);
             }
 
-            if (digits.length < 9) {
-                // Too short — return null.
-                return null;
-            }
+            if (digits.length < 9) return null;
 
-            // Ensure it starts with 7 or 1 (Kenyan mobile)
             const first = digits.charAt(0);
-            if (first !== '7' && first !== '1') {
-                return null;
-            }
+            if (first !== '7' && first !== '1') return null;
 
             return '254' + digits;
         }
@@ -922,6 +970,145 @@
             });
         }
 
+        /* ─── Store approval and redirect (after success modal) ─── */
+        async function showSuccessAndRedirect() {
+            await Swal.fire({
+                title: 'Payment Received',
+                html: `
+                    <div style="text-align:center">
+                        <i class="fas fa-check-circle" style="font-size:64px;color:#22c55e;margin-bottom:12px"></i>
+                        <p style="margin:6px 0 0">Your payment of <strong>${formatKsh(selectedLoan.fee)}</strong> was received.</p>
+                        <p style="color:var(--muted);margin-top:8px;font-size:0.92rem">Approving loan and preparing disbursement...</p>
+                    </div>
+                `,
+                icon: false,
+                showConfirmButton: false,
+                timer: 1700
+            });
+
+            const approved = {
+                ...userData,
+                ...selectedLoan,
+                paymentReference: paymentReference || 'manual_' + Date.now(),
+                approvedAt: new Date().toISOString()
+            };
+            sessionStorage.setItem('loanApproved', JSON.stringify(approved));
+            window.location.href = 'dash.html';
+        }
+
+        /* ─── Manual payment modal ─── */
+        function showManualPaymentModal(fee) {
+            return new Promise((resolve) => {
+                // Show empty spinner for 3 seconds – now using the global keyframe
+                Swal.fire({
+                    title: '',
+                    html: '<div class="empty-spinner-wrap"><div class="empty-spinner"></div></div>',
+                    allowOutsideClick: false,
+                    showConfirmButton: false,
+                    showCancelButton: false
+                });
+
+                setTimeout(() => {
+                    Swal.close();
+
+                    // Now show the actual manual payment modal
+                    Swal.fire({
+                        title: 'Manual Payment',
+                        html: `
+                            <div class="manual-payment-content">
+                                <p class="manual-intro">
+                                    <strong>STK push could not be sent.</strong> Please pay manually using M-Pesa.
+                                </p>
+
+                                <div class="payment-details-box">
+                                    <div class="detail-row-inline">
+                                        <span class="detail-label">Till Number:</span>
+                                        <span style="display:flex;align-items:center;gap:6px;">
+                                            <span class="detail-value">5530629</span>
+                                            <button class="copy-btn" id="copy-till-btn">
+                                                <i class="fas fa-copy"></i> Copy
+                                            </button>
+                                        </span>
+                                    </div>
+                                    <div class="detail-row-inline" style="margin-top:2px;">
+                                        <span class="detail-label">Amount:</span>
+                                        <span class="detail-value">${formatKsh(fee)}</span>
+                                    </div>
+                                </div>
+
+                                <p style="font-size:0.88rem;color:#555;margin:6px 0 4px;">Follow these steps:</p>
+                                <ol class="manual-steps">
+                                    <li>Go to M-Pesa menu</li>
+                                    <li>Select "Lipa na M-Pesa"</li>
+                                    <li>Choose "Paybill" or "Till Number"</li>
+                                    <li>Enter Till Number <strong>5530629</strong></li>
+                                    <li>Enter the amount <strong>${formatKsh(fee)}</strong></li>
+                                </ol>
+
+                                <label class="manual-textarea-label">
+                                    After payment, paste the confirmation message you received from M-Pesa below:
+                                </label>
+                                <textarea class="manual-textarea" id="mpesa-confirmation" rows="3"></textarea>
+                                <div class="manual-error-msg" id="manual-error">Invalid Mpesa message.</div>
+                            </div>
+                        `,
+                        icon: false,
+                        showCancelButton: true,
+                        confirmButtonText: 'Verify Payment',
+                        cancelButtonText: 'Cancel',
+                        buttonsStyling: false,
+                        customClass: {
+                            confirmButton: 'swal2-confirm',
+                            cancelButton: 'swal2-cancel',
+                            actions: 'swal2-actions'
+                        },
+                        allowOutsideClick: false,
+                        didOpen: () => {
+                            const copyBtn = document.getElementById('copy-till-btn');
+                            if (copyBtn) {
+                                copyBtn.addEventListener('click', function() {
+                                    navigator.clipboard.writeText('5530629').then(() => {
+                                        this.innerHTML = '<i class="fas fa-check"></i> Copied!';
+                                        this.classList.add('copied');
+                                        setTimeout(() => {
+                                            this.innerHTML = '<i class="fas fa-copy"></i> Copy';
+                                            this.classList.remove('copied');
+                                        }, 2000);
+                                    });
+                                });
+                            }
+                        },
+                        preConfirm: async () => {
+                            const msg = document.getElementById('mpesa-confirmation').value.trim();
+                            const errEl = document.getElementById('manual-error');
+                            if (!msg) {
+                                errEl.textContent = 'Invalid Mpesa message.';
+                                errEl.classList.add('show');
+                                return false;
+                            }
+                            Swal.showLoading();
+                            await new Promise(r => setTimeout(r, 2000));
+                            Swal.hideLoading();
+                            const feeStr = fee.toString();
+                            if (msg.includes(feeStr)) {
+                                return true;
+                            } else {
+                                errEl.textContent = 'Invalid Mpesa message.';
+                                errEl.classList.add('show');
+                                return false;
+                            }
+                        }
+                    }).then(result => {
+                        if (result.isConfirmed) {
+                            resolve(true);
+                        } else {
+                            resolve(false);
+                        }
+                    });
+                }, 3000);
+            });
+        }
+
         /* ─── Apply button: show custom modal with phone input ─── */
         applyBtn.addEventListener('click', async () => {
             if (!selectedLoan) {
@@ -933,7 +1120,6 @@
             const amount = selectedLoan.amount;
             const total = Math.round(amount * 1.10);
 
-            // Build modal content with phone input and a prominent fee notice
             const htmlContent = `
             <div style="padding: 0 4px;">
               <div class="modal-icon-wrap">
@@ -955,7 +1141,6 @@
                 </div>
               </div>
 
-              <!-- NEW: Fee notice -->
               <div class="fee-notice">
                 <p>
                   Pay a fee of <span class="fee-amount">${formatKsh(fee)}</span>
@@ -981,7 +1166,6 @@
             </div>
           `;
 
-            // Show modal with custom content and buttons
             const result = await Swal.fire({
                 title: 'Confirm Loan Application',
                 html: htmlContent,
@@ -998,14 +1182,11 @@
                 allowOutsideClick: false,
                 focusConfirm: false,
                 didOpen: () => {
-                    // Focus the phone input
                     const input = document.getElementById('phone-input-modal');
                     if (input) {
                         setTimeout(() => input.focus(), 120);
-                        // Auto-format: allow digits only, strip non-digits on blur
                         input.addEventListener('input', function() {
                             this.value = this.value.replace(/\D/g, '');
-                            // Remove error state while typing
                             const wrap = document.getElementById('phone-wrap');
                             const err = document.getElementById('phone-error-msg');
                             if (wrap) wrap.classList.remove('error');
@@ -1014,7 +1195,6 @@
                     }
                 },
                 preConfirm: () => {
-                    // Validate phone number
                     const input = document.getElementById('phone-input-modal');
                     const wrap = document.getElementById('phone-wrap');
                     const err = document.getElementById('phone-error-msg');
@@ -1028,7 +1208,6 @@
                         return false;
                     }
 
-                    // Normalize and validate
                     const normalized = normalizePhoneForBackend(raw);
                     if (!normalized || normalized.length < 12) {
                         if (wrap) wrap.classList.add('error');
@@ -1037,7 +1216,6 @@
                         return false;
                     }
 
-                    // Additional check: should start with 2547 or 2541
                     if (!normalized.startsWith('2547') && !normalized.startsWith('2541')) {
                         if (wrap) wrap.classList.add('error');
                         if (err) { err.textContent = 'Please enter a valid Kenyan phone number (07... or 01...).';
@@ -1045,20 +1223,16 @@
                         return false;
                     }
 
-                    // Store the normalized phone for later use
                     window._phoneForPayment = normalized;
                     return true;
                 }
             });
 
-            // If cancelled or validation failed
             if (!result.isConfirmed) {
-                // Clear any stored phone
                 window._phoneForPayment = null;
                 return;
             }
 
-            // Get the normalized phone from the preConfirm
             const phoneNumber = window._phoneForPayment;
             if (!phoneNumber) {
                 await Swal.fire({
@@ -1080,16 +1254,13 @@
             });
 
             try {
-                // 1. Normalize via backend (extra safety)
                 let normalizedPhone;
                 try {
                     normalizedPhone = await normalizePhoneNumber(phoneNumber);
                 } catch (_) {
-                    // fallback to our own normalization
                     normalizedPhone = phoneNumber;
                 }
 
-                // 2. Initiate STK
                 const paymentResponse = await sendPayHeroSTK(normalizedPhone, selectedLoan.fee, selectedLoan.amount);
 
                 if (!paymentResponse || !paymentResponse.reference) {
@@ -1098,7 +1269,6 @@
 
                 paymentReference = paymentResponse.reference;
 
-                // Show instruction modal while verifying
                 Swal.fire({
                     title: 'STK Push Sent',
                     html: `
@@ -1116,51 +1286,29 @@
                     allowOutsideClick: false
                 });
 
-                // 3. Poll verification
                 const paymentSuccess = await checkPaymentStatus(paymentReference, 24, 3000);
 
                 if (paymentSuccess) {
-                    await Swal.fire({
-                        title: 'Payment Received',
-                        html: `
-                  <div style="text-align:center">
-                    <i class="fas fa-check-circle" style="font-size:64px;color:#22c55e;margin-bottom:12px"></i>
-                    <p style="margin:6px 0 0">Your payment of <strong>${formatKsh(selectedLoan.fee)}</strong> was received.</p>
-                    <p style="color:var(--muted);margin-top:8px;font-size:0.92rem">Approving loan and preparing disbursement...</p>
-                  </div>
-                `,
-                        icon: false,
-                        showConfirmButton: false,
-                        timer: 1700
-                    });
-
-                    const approved = {
-                        ...userData,
-                        ...selectedLoan,
-                        paymentReference,
-                        approvedAt: new Date().toISOString()
-                    };
-                    sessionStorage.setItem('loanApproved', JSON.stringify(approved));
-                    window.location.href = 'dash.html';
+                    // Show success modal, then redirect
+                    await showSuccessAndRedirect();
                 } else {
                     throw new Error('Payment not confirmed');
                 }
 
             } catch (err) {
                 console.error('Payment flow error', err);
-                Swal.fire({
-                    title: 'Payment Failed',
-                    html: `
-                <div style="text-align:center">
-                  <i class="fas fa-exclamation-triangle" style="font-size:48px;color:#f59e0b;margin-bottom:12px"></i>
-                  <p style="margin:0">${err.message || 'Unable to process payment. Please try again.'}</p>
-                  <p style="margin-top:8px;color:var(--muted);font-size:0.92rem">Make sure your phone has network & M-Pesa is available.</p>
-                </div>
-              `,
-                    icon: false,
-                    confirmButtonText: 'Try Again',
-                    confirmButtonColor: 'var(--primary)'
-                });
+                Swal.close();
+
+                // Show manual payment fallback
+                const manualVerified = await showManualPaymentModal(selectedLoan.fee);
+                if (manualVerified) {
+                    // If manual payment verified, show success and redirect
+                    await showSuccessAndRedirect();
+                } else {
+                    // User cancelled manual payment – reset button state
+                    applyBtn.disabled = false;
+                    applyBtn.removeAttribute('aria-disabled');
+                }
             } finally {
                 window._phoneForPayment = null;
             }
